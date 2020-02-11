@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mqtt-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: mqtt
+  template:
+    metadata:
+      labels:
+        component: mqtt
+    spec:
+      containers:
+        - name: mqtt
+          image: allguitars/iot-home-mqtt
+          imagePullPolicy: Always
+          resources:
+            limits:
+              cpu: 50m
+              memory: 64Mi
+              ephemeral-storage: 64Mi
+            requests:
+              cpu: 50m
+              memory: 64Mi
+          env:
+            - name: ENSAAS_SERVICES
+              valueFrom:
+                secretKeyRef:
+                  name: solution-demo-secret
+                  key: ENSAAS_SERVICES
