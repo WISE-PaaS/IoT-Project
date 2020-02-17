@@ -1,20 +1,13 @@
 const mqtt = require('mqtt');
 const { Pool } = require('pg');
 const { mqttUri, pgConnOpt } = require('./keys');
-const { sqlCreatTable, sqlWriteValue } = require('./sql-cmds');
+const { sqlWriteValue } = require('./sql-cmds');
 
 /**
- * Connects to the Postgresql server.
+ * Connecting to the Postgresql DB server
  */
 const pool = new Pool(pgConnOpt);
 pool.on('error', () => logger('Lost PG connection'));
-
-/** 
- * Creates the schema and table and sets the permission base on 'group'
- */
-pool.query(sqlCreatTable)
-  .then(() => logger('Schema and table have been created if not existed'))
-  .catch(err => console.error('Error creating the table...', err.stack));
 
 /**
  * Connects to IotHub and Subcribes to the topic when the connection is made.

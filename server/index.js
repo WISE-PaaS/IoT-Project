@@ -1,7 +1,7 @@
 const express = require('express');
 const moment = require('moment');
 const { Pool } = require('pg');
-const { sqlQueryTemps } = require('./sql-cmds');
+const { sqlCreatTable, sqlQueryTemps } = require('./sql-cmds');
 const { pgConnOpt } = require('./keys');
 
 const app = express();
@@ -11,6 +11,13 @@ const app = express();
  */
 const pool = new Pool(pgConnOpt);
 pool.on('error', () => logger('Lost PG connection'));
+
+/** 
+ * Creates the schema and table and sets the permission base on 'group'
+ */
+pool.query(sqlCreatTable)
+  .then(() => logger('Schema and table have been created if not existed'))
+  .catch(err => console.error('Error creating the table...', err.stack));
 
 /** 
  * Server
