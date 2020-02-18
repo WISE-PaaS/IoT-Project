@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+{{- with .Values.deployParams.server }}
+metadata:
+  name: {{ .name }}
+spec:
+  replicas: {{ .replicaCount }}
+  selector:
+    matchLabels:
+      {{ .labelKey }}: {{ .labelValue }}
+  template:
+    metadata:
+      labels:
+        {{ .labelKey }}: {{ .labelValue }}
+{{- end }}
+    spec:
+      containers:
+        - name: server
+          {{- with .Values.containerParams.server}}
+          image: {{ printf "%s/%s:%s" .repository .imageName .version }}
+          ports:
+            - containerPort: {{ .port }}
+          {{- if .resources }}
+          resources:
+            limits:
+              cpu: {{ .resources.limits.cpu }}
+              memory: {{ .resources.limits.memory }}
+              ephemeral-storage: {{ .resources.limits.ephemeralStorage }}
+            requests:
+              cpu: {{ .resources.requests.cpu }}
+              memory: {{ .resources.requests.memory }}
+          {{- end }}
+          {{- end }}
+          env:
+            - name: ENSAAS_SERVICES
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "iot-home-helm.secret" . }}
+                  key: ENSAAS_SERVICES

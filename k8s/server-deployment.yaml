@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: server
-          image: allguitars/iot-home-server
+          image: allguitars/iot-home-server:1.0.0
           ports:
             - containerPort: 3000
           resources:

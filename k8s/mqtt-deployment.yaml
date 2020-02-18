@@ -14,8 +14,7 @@ spec:
     spec:
       containers:
         - name: mqtt
-          image: allguitars/iot-home-mqtt
-          imagePullPolicy: Always
+          image: allguitars/iot-home-mqtt:1.0.0
           resources:
             limits:
               cpu: 50m

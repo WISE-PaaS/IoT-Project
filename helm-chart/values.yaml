@@ -1,0 +1,76 @@
+namespace: playground
+
+deployParams:
+  server:
+    name: server-deployment
+    replicaCount: 1
+    labelKey: component
+    labelValue: server
+  iothubMqtt:
+    name: mqtt-deployment
+    replicaCount: 1
+    labelKey: component
+    labelValue: mqtt
+
+containerParams:
+  server:
+    repository: allguitars
+    imageName: iot-home-server
+    version: 1.0.0
+    port: 3000
+    resources:
+      limits:
+        cpu: 25m
+        memory: 64Mi
+        ephemeralStorage: 64Mi
+      requests:
+        cpu: 25m
+        memory: 64Mi
+  mqtt:
+    repository: allguitars
+    imageName: iot-home-mqtt
+    version: 1.0.0
+    resources:
+      limits:
+        cpu: 25m
+        memory: 64Mi
+        ephemeralStorage: 64Mi
+      requests:
+        cpu: 25m
+        memory: 64Mi
+
+svcClusterIps:
+  server:
+    name: server
+    selectorKey: component
+    selectorValue: server
+    ports:
+      - port: 3000
+        targetPort: 3000
+
+url:
+  cluster: slave04
+  workspace: se
+  domain: internal
+
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: iothome
+      paths:
+        - path: /?(.*)
+          backend:
+            serviceName: server-cluster-ip-service
+            servicePort: 3000
+#   tls: []
+#   #  - secretName: chart-example-tls
+#   #    hosts:
+#   #      - chart-example.local
+
+# nodeSelector: {}
+# tolerations: []
+# affinity: {}

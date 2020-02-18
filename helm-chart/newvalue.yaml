@@ -1,0 +1,3 @@
+deployParams:
+  iothubMqtt:
+    replicaCount: 2
