@@ -5,6 +5,20 @@ This sample code shows how to deploy an application to the **EnSaaS 4.0** enviro
 - Container Orchestration: **Kubernetes**
 - Package Manager: **Helm**
 
+<br>
+
+## Application Architecture
+
+![architecture](./img/architecture.png)
+
+<br>
+
+## Ingress Layout
+
+![ingress](./img/ingress.png)
+
+<br>
+
 ## Quick Start
 
 ### 1. Downloading the Project
