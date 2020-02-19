@@ -7,6 +7,8 @@ This sample code shows how to deploy an application to the **EnSaaS 4.0** enviro
 
 <br>
 
+## Table of Contents
+
 - [Application Architecture](#Application-Architecture)
 - [Ingress Layout](#Ingress-Layout)
 - [Quick Start](#Quick-Start)
