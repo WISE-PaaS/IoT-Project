@@ -17,7 +17,7 @@ spec:
       containers:
         - name: server
           {{- with .Values.containerParams.server}}
-          image: {{ printf "%s/%s:%s" .repository .imageName .version }}
+          image: {{ printf "%s/%s:%s" .repository .imageName .tag }}
           ports:
             - containerPort: {{ .port }}
           {{- if .resources }}
@@ -35,5 +35,5 @@ spec:
             - name: ENSAAS_SERVICES
               valueFrom:
                 secretKeyRef:
-                  name: {{ include "iot-home-helm.secret" . }}
+                  name: {{ include "iot-home.secret" . }}
                   key: ENSAAS_SERVICES

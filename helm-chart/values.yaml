@@ -16,7 +16,7 @@ containerParams:
   server:
     repository: allguitars
     imageName: iot-home-server
-    version: 1.0.0
+    tag: 1.0.0
     port: 3000
     resources:
       limits:
@@ -29,7 +29,7 @@ containerParams:
   mqtt:
     repository: allguitars
     imageName: iot-home-mqtt
-    version: 1.0.0
+    tag: 1.0.0
     resources:
       limits:
         cpu: 25m
@@ -50,7 +50,6 @@ svcClusterIps:
 
 url:
   cluster: slave04
-  workspace: se
   domain: internal
 
 ingress:

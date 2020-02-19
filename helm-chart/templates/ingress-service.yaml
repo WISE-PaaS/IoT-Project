@@ -1,5 +1,5 @@
 {{- if .Values.ingress.enabled -}}
-{{- $fullName := include "iot-home-helm.fullname" . -}}
+{{- $fullName := include "iot-home.fullname" . -}}
 {{- $subDomain := printf "%s.%s.%s" .Values.namespace .Values.url.cluster .Values.url.domain -}}
 {{- if semverCompare ">=1.14-0" .Capabilities.KubeVersion.GitVersion -}}
 apiVersion: networking.k8s.io/v1beta1
@@ -9,7 +9,7 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: {{ $fullName }}
-  labels: {{ include "iot-home-helm.labels" . | nindent 4 }}
+  labels: {{ include "iot-home.labels" . | nindent 4 }}
   {{- with .Values.ingress.annotations }}
   annotations: {{ toYaml . | nindent 4 }}
   {{- end }}
