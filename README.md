@@ -60,15 +60,13 @@ From the ``HOSTS``, you can get the external URL with the following format:
 
 ``https://{Host}-{Namespace}-{ClusterName}.es.wise-paas.cn``
 
-<br>
+In this example, we can access the application by going to:
 
-So, in this example code, we can access the application by going to:
-
- ``https://iothome-playground-slave04.es.wise-paas.cn``.
+``https://iothome-playground-slave04.es.wise-paas.cn``
 
 <br>
 
-##Customizing the Application
+## Customizing the Application
 
 ### 1. Building & Pushing the Images
 
@@ -112,7 +110,7 @@ Inside ``Values.yaml``, you can tune the following options:
 
 <br>
 
-- repository**
+- **repository**
 
   Your DockerHub account
 
@@ -136,7 +134,7 @@ Inside ``Values.yaml``, you can tune the following options:
 
   You may also change this value so that your URL can be more customized.
 
-  ![values-3](/Users/yihsiulee/sandbox/iot-home-k8s/img/values-3.png)
+  ![values-3](./img/values-3.png)
 
 <br>
 
