@@ -7,6 +7,18 @@ This sample code shows how to deploy an application to the **EnSaaS 4.0** enviro
 
 <br>
 
+- [Application Architecture](#Application-Architecture)
+- [Ingress Layout](#Ingress-Layout)
+- [Quick Start](#Quick-Start)
+  - [Downloading the Project](#1-Downloading-the-Project)
+  - [Installing a Release](#2-Installing-a-Release)
+  - [Retrieving the URL of the Application](#3-Retrieving-the-URL-of-the-Application)
+- [Customizing the Application](#Customizing-the-Application)
+  - [Building & Pushing the Images](#1-Building--Pushing-the-Images)
+  - [Configuring the Helm Chart](#2-Configuring-the-Helm-Chart)
+  - [Installing a Release](#3-Installing-a-Release)
+- [Upgrade & Rollback](#Upgrade--Rollback)
+
 ## Application Architecture
 
 ![architecture](./img/architecture.png)
@@ -96,7 +108,7 @@ $ docker push {DockerHubAccount}/{ImageName}:{Tag}
 
 <br>
 
-### 2. Configuring the Chart
+### 2. Configuring the Helm Chart
 
 ```sh
 $ cd ../helm-chart/
