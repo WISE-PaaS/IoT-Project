@@ -1,4 +1,5 @@
 const mqtt = require('mqtt');
+const moment = require('moment');
 const { Pool } = require('pg');
 const { mqttUri, pgConnOpt } = require('./keys');
 const { sqlWriteValue } = require('./sql-cmds');
@@ -32,7 +33,12 @@ client.on('message', async (topic, message, packet) => {
 
   try {
     const result = await pool.query(sqlWriteValue, [temperature]);
-    console.log('Added a new row:', JSON.stringify(result['rows'][0]));
+
+    const row = result['rows'][0];
+    row.timestamp = moment(row.timestamp).format('MM-DD HH:mm:ss');
+
+    console.log('----> Added a new row:');
+    console.table(row);
   } catch (err) {
     console.error('Error adding data...', err.stack);
   }

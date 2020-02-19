@@ -18,6 +18,7 @@ spec:
         - name: mqtt
           {{- with .Values.containerParams.mqtt}}
           image: {{ printf "%s/%s:%s" .repository .imageName .tag }}
+          imagePullPolicy: Always
           {{- if .resources }}
           resources:
             limits:

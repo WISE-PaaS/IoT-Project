@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "moment": "^2.24.0",
     "mqtt": "^3.0.0",
     "nodemon": "^2.0.2",
     "pg": "^7.18.1"

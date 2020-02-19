@@ -18,6 +18,7 @@ spec:
         - name: server
           {{- with .Values.containerParams.server}}
           image: {{ printf "%s/%s:%s" .repository .imageName .tag }}
+          imagePullPolicy: Always
           ports:
             - containerPort: {{ .port }}
           {{- if .resources }}
