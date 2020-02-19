@@ -5,8 +5,6 @@ This sample code shows how to deploy an application to the **EnSaaS 4.0** enviro
 - Container Orchestration: **Kubernetes**
 - Package Manager: **Helm**
 
-<br>
-
 ## Table of Contents
 
 - [Application Architecture](#Application-Architecture)
