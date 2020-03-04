@@ -14,7 +14,7 @@ deployParams:
 
 containerParams:
   server:
-    repository: allguitars
+    repository: ensaas
     imageName: iot-home-server
     tag: 1.0.0
     port: 3000
@@ -27,7 +27,7 @@ containerParams:
         cpu: 20m
         memory: 64Mi
   mqtt:
-    repository: allguitars
+    repository: ensaas
     imageName: iot-home-mqtt
     tag: 1.0.0
     resources:

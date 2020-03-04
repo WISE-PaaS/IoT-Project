@@ -82,13 +82,13 @@ The naming convention for the ``HOSTS`` while you are deploying the app to EnSaa
 
 ``{Host}.{Namespace}.{ClusterName}.internal``
 
-From the ``HOSTS``, you can get the external URL with the following format:
+From the ``HOSTS``, you can derive the external URL with the following format:
 
-``https://{Host}-{Namespace}-{ClusterName}.es.wise-paas.cn``
+``https://{Host}-{Namespace}-{ClusterName}.sa.wise-paas.com``
 
 In this example, we can access the application by going to:
 
-``https://iothome-playground-slave04.es.wise-paas.cn``
+``https://iothome-devspace-eks004.sa.wise-paas.com``
 
 <br>
 
@@ -152,15 +152,22 @@ Inside ``Values.yaml``, you can tune the following options:
 
 <br>
 
-- **cluster**
+- **global.database.secretName**
 
-  Name of the cluster that you are currently working in.
+  Name of the secret that you will use for these deployments.
 
-- **host**
+  Naming convention for the secret: ``{ChartName}-{Namespace}-secret``
 
-  You may also change this value so that your URL can be more customized.
+  ``{ChartName}`` is defined in the ``Chart.yaml`` inside the ``helm-chart`` directory. The example shown below has ``iot-home-k8s`` as the Chart name and ``devspace`` as the namespace.
 
+- **global.url.host**
+
+  Naming convention for host: ``.{Namespace}.{ClusterName}.en.internal``
+
+  ``en.internal`` at the end is fixed and alos notice that there is dot (``.``) at the beginning of the ``host`` value. In the following example, once you install a helm release, this ``host`` will be combined with the ``ingress.hosts[0].host`` and become the external URL as ``iothome.devspace.eks004.sa.wise-paas.com``.
+  
   ![values-3](./img/values-3.png)
+  
 
 <br>
 
