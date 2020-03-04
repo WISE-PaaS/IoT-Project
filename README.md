@@ -164,7 +164,7 @@ Inside ``Values.yaml``, you can tune the following options:
 
   Naming convention for host: ``.{Namespace}.{ClusterName}.en.internal``
 
-  ``en.internal`` at the end is fixed and alos notice that there is dot (``.``) at the beginning of the ``host`` value. In the following example, once you install a helm release, this ``host`` will be combined with the ``ingress.hosts[0].host`` and become the external URL as ``iothome.devspace.eks004.sa.wise-paas.com``.
+  ``en.internal`` at the end is a fixed string. And also notice that there is dot (``.``) at the beginning of the ``host`` value. In the following example, once you install a helm release, this ``host`` will be combined with the ``ingress.hosts[0].host`` and become the external URL as ``iothome.devspace.eks004.sa.wise-paas.com``. We can see that the ``en.internal`` has been replaced with ``sa.wise-paas.com``.
   
   ![values-3](./img/values-3.png)
   
