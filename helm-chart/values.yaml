@@ -20,11 +20,11 @@ containerParams:
     port: 3000
     resources:
       limits:
-        cpu: 25m
+        cpu: 20m
         memory: 64Mi
         ephemeralStorage: 64Mi
       requests:
-        cpu: 25m
+        cpu: 20m
         memory: 64Mi
   mqtt:
     repository: allguitars
@@ -32,11 +32,11 @@ containerParams:
     tag: 1.0.0
     resources:
       limits:
-        cpu: 25m
+        cpu: 20m
         memory: 64Mi
         ephemeralStorage: 64Mi
       requests:
-        cpu: 25m
+        cpu: 20m
         memory: 64Mi
 
 svcClusterIps:
@@ -48,9 +48,14 @@ svcClusterIps:
       - port: 3000
         targetPort: 3000
 
-url:
-  cluster: slave04
-  domain: internal
+global:
+  database:
+    secretName: iot-home-k8s-devspace-secret
+  url:
+    host: .devspace.eks004.en.internal
+  ensaasApps:
+    apiSso:
+      internalUrl: http://api.sso.ensaas.en.internal/v4.0
 
 ingress:
   enabled: true

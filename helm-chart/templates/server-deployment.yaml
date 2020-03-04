@@ -36,5 +36,5 @@ spec:
             - name: ENSAAS_SERVICES
               valueFrom:
                 secretKeyRef:
-                  name: {{ include "iot-home.secret" . }}
+                  name: {{ .Values.global.database.secretName }}
                   key: ENSAAS_SERVICES
