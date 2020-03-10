@@ -25,7 +25,7 @@ client.on('connect', (connack) => {
 });
 
 /**
- * Connects to IotHub and Subcribes to the topic when the connection is made.
+ * Saves data to the Postgresql DB when receiving a message.
  */
 client.on('message', async (topic, message, packet) => {
   const temperature = message.toString();

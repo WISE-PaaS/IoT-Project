@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: server-deployment
+  name: mqtt-dave-lee
 spec:
   replicas: 1
   selector:
     matchLabels:
-      component: server
+      component: mqtt
+      student: dave-lee
   template:
     metadata:
       labels:
-        component: server
+        component: mqtt
+        student: dave-lee
     spec:
       containers:
-        - name: server
-          image: ensaas/iot-home-server:1.0.0
-          ports:
-            - containerPort: 3000
+        - name: mqtt
+          image: ensaas/iot-home-mqtt:1.0.0
           resources:
             limits:
               cpu: 20m
@@ -29,5 +29,5 @@ spec:
             - name: ENSAAS_SERVICES
               valueFrom:
                 secretKeyRef:
-                  name: solution-demo-secret
+                  name: iot-home-k8s-devspace-secret
                   key: ENSAAS_SERVICES
