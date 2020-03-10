@@ -7,11 +7,15 @@ spec:
   replicas: {{ .replicaCount }}
   selector:
     matchLabels:
+      {{- range .labels }}
       {{ .labelKey }}: {{ .labelValue }}
+      {{- end }}
   template:
     metadata:
       labels:
+        {{- range .labels }}
         {{ .labelKey }}: {{ .labelValue }}
+        {{- end }}
 {{- end }}
     spec:
       containers:

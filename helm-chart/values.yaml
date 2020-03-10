@@ -2,15 +2,21 @@ namespace: playground
 
 deployParams:
   server:
-    name: server-deployment
+    name: server-dave-lee
     replicaCount: 1
-    labelKey: component
-    labelValue: server
+    labels:
+      - labelKey: component
+        labelValue: server
+      - labelKey: student
+        labelValue: dave-lee
   iothubMqtt:
-    name: mqtt-deployment
+    name: mqtt-dava-lee
     replicaCount: 1
-    labelKey: component
-    labelValue: mqtt
+    labels:
+      - labelKey: component
+        labelValue: mqtt
+      - labelKey: student
+        labelValue: dave-lee
 
 containerParams:
   server:
@@ -41,18 +47,21 @@ containerParams:
 
 svcClusterIps:
   server:
-    name: server
-    selectorKey: component
-    selectorValue: server
+    name: server-dave-lee
+    selectors:
+      - selectorKey: component
+        selectorValue: server
+      - selectorKey: student
+        selectorValue: dave-lee
     ports:
       - port: 3000
         targetPort: 3000
 
 global:
   database:
-    secretName: iot-home-k8s-devspace-secret
+    secretName: iot-home-k8s-level2-secret
   url:
-    host: .devspace.eks004.en.internal
+    host: .level2.eks004.en.internal
   ensaasApps:
     apiSso:
       internalUrl: http://api.sso.ensaas.en.internal/v4.0
@@ -64,11 +73,11 @@ ingress:
     nginx.ingress.kubernetes.io/rewrite-target: /$1
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: iothome
+    - host: iot-home
       paths:
         - path: /?(.*)
           backend:
-            serviceName: server-cluster-ip-service
+            serviceName: server-dave-lee
             servicePort: 3000
 #   tls: []
 #   #  - secretName: chart-example-tls
