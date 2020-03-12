@@ -1,4 +1,4 @@
-namespace: playground
+namespace: level2
 
 deployParams:
   server:
@@ -10,7 +10,7 @@ deployParams:
       - labelKey: student
         labelValue: dave-lee
   iothubMqtt:
-    name: mqtt-dava-lee
+    name: mqtt-dave-lee
     replicaCount: 1
     labels:
       - labelKey: component
@@ -73,7 +73,7 @@ ingress:
     nginx.ingress.kubernetes.io/rewrite-target: /$1
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: iot-home
+    - host: iot-home-dave-lee
       paths:
         - path: /?(.*)
           backend:

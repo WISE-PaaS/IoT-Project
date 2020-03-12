@@ -29,5 +29,5 @@ spec:
             - name: ENSAAS_SERVICES
               valueFrom:
                 secretKeyRef:
-                  name: iot-home-k8s-devspace-secret
+                  name: iot-home-k8s-level2-secret
                   key: ENSAAS_SERVICES
