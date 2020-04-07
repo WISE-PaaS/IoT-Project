@@ -10,7 +10,7 @@ module.exports.pgConnOpt = {
   database: pgCreds.database,
   user: pgCreds.username,
   password: pgCreds.password,
-  max: 3,
+  max: 1,
   idleTimeoutMillis: 5000,
   connectionTimeoutMillis: 2000
 };
