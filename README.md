@@ -76,11 +76,15 @@ $ kubectl get ingress
 
 In the output, you can find the hostname of the application.
 
-![url](./img/url.png)
+```
+$ kubectl get ing
+NAME                     HOSTS                                              ADDRESS                      PORTS   AGE
+demo-iot-home-dave-lee   iot-home-dave-lee.devspace.eks004.en.internal      10.0.9.4,10.0.9.5,10.0.9.6   80      108s
+```
 
 The naming convention for the ``HOSTS`` while you are deploying the app to EnSaaS. You can set up these required valus in your Helm Chart.
 
-``{Host}.{Namespace}.{ClusterName}.internal``
+``{Host}.{Namespace}.{ClusterName}.en.internal``
 
 From the ``HOSTS``, you can derive the external URL with the following format:
 
@@ -88,7 +92,7 @@ From the ``HOSTS``, you can derive the external URL with the following format:
 
 In this example, we can access the application by going to:
 
-``https://iothome-devspace-eks004.sa.wise-paas.com``
+``https://iot-home-dave-lee-devspace-eks004.sa.wise-paas.com``
 
 <br>
 
