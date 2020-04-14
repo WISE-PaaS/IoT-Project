@@ -4,6 +4,7 @@ metadata:
   name: server-dave-lee
 spec:
   replicas: 1
+  revisionHistoryLimit: 0
   selector:
     matchLabels:
       component: server

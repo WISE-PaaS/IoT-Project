@@ -5,6 +5,7 @@ metadata:
   name: {{ .name }}
 spec:
   replicas: {{ .replicaCount }}
+  revisionHistoryLimit: 0
   selector:
     matchLabels:
       {{- range .labels }}
