@@ -17,7 +17,8 @@ spec:
     spec:
       containers:
         - name: mqtt
-          image: ensaas/iot-home-mqtt:v1.4.7
+          image: ensaas/iot-home-mqtt:2.0.0
+          imagePullPolicy: Always
           resources:
             limits:
               cpu: 20m

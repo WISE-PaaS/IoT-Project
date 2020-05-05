@@ -17,7 +17,8 @@ spec:
     spec:
       containers:
         - name: server
-          image: ensaas/iot-home-server:1.0.0
+          image: ensaas/iot-home-server:2.0.0
+          imagePullPolicy: Always
           ports:
             - containerPort: 3000
           resources:

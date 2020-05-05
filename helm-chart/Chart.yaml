@@ -4,5 +4,5 @@ name: iot-home-dave-lee
 description: A Helm chart for the example "iot-home-k8s" on the Advantech's EnSaaS 4.0 platform.
 
 type: application
-version: 0.6.0
+version: 1.0.0
 appVersion: 2.0.0
