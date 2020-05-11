@@ -12,7 +12,8 @@ CREATE SCHEMA IF NOT EXISTS "livingroom";
 ALTER SCHEMA "livingroom" OWNER TO "groupFamily";
 CREATE TABLE IF NOT EXISTS "livingroom"."temperature"(
   id serial,
-  timestamp timestamp (2) default current_timestamp,
+  timestamp timestamp without time zone NOT NULL
+    DEFAULT (current_timestamp AT TIME ZONE 'UTC'),
   temperature integer,
   PRIMARY KEY (id)
 );
