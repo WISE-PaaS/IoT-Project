@@ -10,7 +10,7 @@ spec:
   # SA DataCenter
     - host: iot-home-dave-lee.assignment.eks004.en.internal
   # HZ DataCenter
-    # - host: iot-home-dave-lee.assignment.eks006.en.internal
+    #- host: iot-home-dave-lee.assignment.eks006.en.internal
       http:
         paths:
           - path: /
