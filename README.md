@@ -1,4 +1,4 @@
-# mqtt-postgres-k8s
+# Iot-Project
 
 This sample code shows how to deploy an application to the **EnSaaS 4.0** environment and connect to the the database (Postgresql) and message broker (RabbitMQ) services provided by the platform.
 
