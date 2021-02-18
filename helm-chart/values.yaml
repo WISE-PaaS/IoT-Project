@@ -59,9 +59,9 @@ svcClusterIps:
 
 global:
   database:
-    secretName: iot-home-k8s-level2-secret
+    secretName: assignment-secret
   url:
-    host: .level2.eks004.en.internal
+    host: .assignment.eks004.en.internal
   ensaasApps:
     apiSso:
       internalUrl: http://api.sso.ensaas.en.internal/v4.0
