@@ -47,11 +47,12 @@ Download the sample code to modify the config files and deploy "Iot-Project" app
     ![cluster](./img/cluster.png)
         
    - **ingress.yaml**      
+   Set the Host Name → sso-frontend-{Name}.{namespace name}.{cluster name}.en.internal
     ![ingresshost](./img/ingresshost.png)
         
 
 3. Set up Postgresql data source for your dashboard
-    - Host (Find it in the credential’s JSON file decoded from the *secret*)
+    - ExternalHost (Find it in the credential’s JSON file decoded from the *secret*)
     - Database Name
     - Username
     - Password
