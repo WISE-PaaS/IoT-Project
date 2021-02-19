@@ -52,7 +52,7 @@ WHERE table_name='testTable'
         
     - **ingress.yaml**
 
-        ![ingress](./img/ingrees.png)
+        ![ingresshost](./img/ingreeshost.png)
         
 
 3. Set up Postgresql data source for your dashboard
