@@ -32,9 +32,7 @@ WHERE table_name='testTable'
 
 # 2. Learning Steps
 
-1. Download the sample code and modify the config files
-    - [Sample Code](https://github.com/WISE-PaaS/mqtt-postgres-k8s)
-2. Follow the steps in the video to complete the project.
+1. Follow the steps in the video to complete the project.
 
     **Note**: It’s not required to modify the Helm-Chart because you can just change the K8s config files and apply the new configuration to the namespace. However, you can still customize the Helm-Chart and try to deploy your app with it.
 
