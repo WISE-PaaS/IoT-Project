@@ -36,22 +36,18 @@ Download the sample code to modify the config files and deploy "Iot-Project" app
 ## Modify the config files
 
 **Note**: It’s not required to modify the Helm-Chart because you can just change the K8s config files and apply the new configuration to the namespace. However, you can still customize the Helm-Chart and try to deploy your app with it.
-
-    - **server.yaml**
-    
-        ![server](./img/server.png)
+   
+   - **server.yaml**
+    ![server](./img/server.png)
         
-    - **mqtt.yaml**
-    
-        ![mqtt](./img/mqtt.png)
+   - **mqtt.yaml** 
+    ![mqtt](./img/mqtt.png)
         
-    - **cluster-ip.yaml**
-
-        ![cluster](./img/cluster.png)
+   - **cluster-ip.yaml** 
+    ![cluster](./img/cluster.png)
         
-    - **ingress.yaml**
-    
-        ![ingresshost](./img/ingresshost.png)
+   - **ingress.yaml**      
+    ![ingresshost](./img/ingresshost.png)
         
 
 3. Set up Postgresql data source for your dashboard
