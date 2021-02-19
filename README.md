@@ -30,11 +30,12 @@ FROM information_schema.role_table_grants
 WHERE table_name='testTable'
 ```
 
-# 2. Learning Steps
+# 2. Introduction
+Download the sample code to modify the config files and deploy "Iot-Project" app to assignment namespace 
 
-1. Follow the steps in the video to complete the project.
+## Modify the config files
 
-    **Note**: It’s not required to modify the Helm-Chart because you can just change the K8s config files and apply the new configuration to the namespace. However, you can still customize the Helm-Chart and try to deploy your app with it.
+**Note**: It’s not required to modify the Helm-Chart because you can just change the K8s config files and apply the new configuration to the namespace. However, you can still customize the Helm-Chart and try to deploy your app with it.
 
     - **server.yaml**
     
