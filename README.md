@@ -59,5 +59,5 @@ Download the sample code to modify the config files and deploy "Iot-Project" app
     - Database Name
     - Username
     - Password
-5. Create a *Graph* panel and link it to the Postgresql data source as demonstrated in the training video.
-**Note : Stop the *auto-refeshing* setting of your dashboard and fix the time range so that we can check the result within the range.
+5. Create a *Graph* panel and link it to the Postgresql data source as demonstrated in the training video.</br>
+**Note : Stop the *auto-refeshing* setting of your dashboard and fix the time range so that we can check the result within the range.**
