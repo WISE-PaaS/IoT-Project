@@ -50,7 +50,7 @@ Download the sample code to modify the config files and deploy "Iot-Project" app
    Set the Host Name → sso-frontend-{Name}.{namespace name}.{cluster name}.en.internal
     ![ingresshost](./img/ingresshost.png)
         
-3. Run Edge-Mock-Temperature data
+3. Run "Edge-Mock-Temperature" push data to postgresql
     - [Sample code](https://github.com/WISE-PaaS/edge-mock-temperature)
     - Follow the steps in the video to set up the Edge-Mock-Temperature data
     - See if the graph shows the latest temperature data
