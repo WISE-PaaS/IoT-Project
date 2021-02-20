@@ -50,15 +50,14 @@ Download the sample code to modify the config files and deploy "Iot-Project" app
    Set the Host Name → sso-frontend-{Name}.{namespace name}.{cluster name}.en.internal
     ![ingresshost](./img/ingresshost.png)
         
-
-3. Set up Postgresql data source for your dashboard
+3. Run Edge-Mock-Temperature data
+    - [Sample code](https://github.com/WISE-PaaS/edge-mock-temperature)
+    - Follow the steps in the video to set up the Edge-Mock-Temperature data
+    - See if the graph shows the latest temperature data
+4. Set up Postgresql data source for your dashboard
     - ExternalHost (Find it in the credential’s JSON file decoded from the *secret*)
     - Database Name
     - Username
     - Password
-4. Create a *Graph* panel and link it to the Postgresql data source as demonstrated in the training video.
-5. Run Edge-Mock-Temperature data
-    - [Sample code](https://github.com/WISE-PaaS/edge-mock-temperature)
-    - Follow the steps in the video to set up the Edge-Mock-Temperature data
-    - See if the graph shows the latest temperature data
-6. Stop the *auto-refeshing* setting of your dashboard and fix the time range so that we can check the result within the range.
+5. Create a *Graph* panel and link it to the Postgresql data source as demonstrated in the training video.
+**Note : Stop the *auto-refeshing* setting of your dashboard and fix the time range so that we can check the result within the range.
