@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mqtt-dave-lee
+  name: mqtt-sk-chen
 spec:
   replicas: 1
   revisionHistoryLimit: 0
   selector:
     matchLabels:
       component: mqtt
-      student: dave-lee
+      student: sk-chen
   template:
     metadata:
       labels:
         component: mqtt
-        student: dave-lee
+        student: sk-chen
     spec:
       containers:
         - name: mqtt
