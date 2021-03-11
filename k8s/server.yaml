@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: server-dave-lee
+  name: server-sk-chen
 spec:
   replicas: 1
   revisionHistoryLimit: 0
   selector:
     matchLabels:
       component: server
-      student: dave-lee
+      student: sk-chen
   template:
     metadata:
       labels:
         component: server
-        student: dave-lee
+        student: sk-chen
     spec:
       containers:
         - name: server
